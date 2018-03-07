@@ -1,15 +1,15 @@
 # WaniKani Stealth Mode
 
-[(Download UserScript here)](TODO GreasyFork)
+[(Download UserScript here)](https://greasyfork.org/en/scripts/39019-wanikani-stealth-mode)
 
-Adds 5 new ranks to WaniKani's SRS. Additionally, allows you to rename the SRS labels of the default system. *Note that for simplicity's sake, this only affects review sessions*.
+Adds 5 new ranks to WaniKani's SRS. Additionally, allows you to rename the SRS labels of the default system. **Note that for simplicity's sake, this only affects review sessions**.
 
-1. *Layman
-2. *Initiate
-3. *Novice
+1. **Layman**
+2. **Initiate**
+3. **Novice**
 4. Apprentice
-5. *Journeyman
-6. *Adept
+5. **Journeyman**
+6. **Adept** (This is the default 'Guru' level)
 7. Guru
 8. Master
 9. Enlightened
