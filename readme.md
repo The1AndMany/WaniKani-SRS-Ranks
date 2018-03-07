@@ -9,7 +9,7 @@ Adds 5 new ranks to WaniKani's SRS. Additionally, allows you to rename the SRS l
 3. **Novice**
 4. Apprentice
 5. **Journeyman**
-6. **Adept** (This is the default 'Guru' level)
+6. **Adept** (This is the old 'Guru' level)
 7. Guru
 8. Master
 9. Enlightened
