@@ -1,0 +1,42 @@
+{
+  "name": "WaniKani-SRS-Ranks",
+  "description": "Userscript source files for WaniKani SRS Ranks.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Saxon Cameron, @saxoncameron",
+    "url": "http://www.saxoncameron.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saxoncameron/WaniKani-SRS-Ranks"
+  },
+  "engines": {
+    "node": ">= 9.4.0"
+  },
+  "scripts": {
+    "js-build:lint": "eslint source/script.js",
+    "js-build:babel": "babel --presets babel-preset-env source -d build",
+    "watch:js": "onchange 'source/script.js' -- npm run build",
+    "build:js": "npm-run-all js-build:*",
+    "build": "npm-run-all build:*; node scripts/text/build-complete.js",
+    "watch": "node scripts/text/watching.js; npm-run-all -p watch:*",
+    "lint": "npm run js-build:lint",
+    "start": "node scripts/text/signature.js; npm run build; npm run watch"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.18.1",
+    "eslint-config-deloitte": "^3.1.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "npm-run-all": "^4.1.2",
+    "onchange": "^3.3.0"
+  },
+  "dependencies": {}
+}
