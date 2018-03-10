@@ -1,6 +1,6 @@
 # WaniKani SRS Ranks
 
-[(Download UserScript here)](hhttps://greasyfork.org/en/scripts/39258-wanikani-srs-ranks)
+[(Download UserScript here)](https://greasyfork.org/en/scripts/39258-wanikani-srs-ranks)
 
 Adds 5 new ranks to WaniKani's SRS. Additionally, allows you to rename the SRS labels of the default system. **Note that for simplicity's sake, this only affects review sessions**.
 
