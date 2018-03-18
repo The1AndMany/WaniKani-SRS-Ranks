@@ -37,7 +37,17 @@
 	};
 
 	function populateAndAppendCSS() {
+
+		// =====================================================
+		// NOTE: CSS is populated via build task
+		// =====================================================
+
+		// DO NOT REMOVE: css-to-js upper-bound
 		let CSS = '';
+		// DO NOT REMOVE: css-to-js lower-bound
+
+		// =====================================================
+		// =====================================================
 
 		CONST.SRS_RANKS.forEach(rank => {
 			CSS += [
@@ -69,9 +79,6 @@
 			const currentItem = $.jStorage.get('currentItem');
 			const nextSrs = currentItem.srs + (levelUpOrDown ? 1 : -1);
 			const rankLabel = CONST.SRS_RANKS[nextSrs].toLowerCase();
-
-			console.log('current rank:', CONST.SRS_RANKS[currentItem.srs], levelUpOrDown);
-			console.log('triggered for rank:', rankLabel);
 
 			_$srsTile
 				// Remove legacy SRS rank

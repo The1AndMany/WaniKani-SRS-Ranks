@@ -15,16 +15,28 @@
     "node": ">= 9.4.0"
   },
   "scripts": {
+    "preversion": "git reset --hard HEAD",
+    "version": "genversion version.js && npm run rememberbuild && node scripts/bump-version.js && npm run build && git add --all",
+    "postversion": "npm run ignorebuild",
+    "ignorebuild": "find build -type f -exec git update-index --assume-unchanged '{}' \\;",
+    "rememberbuild": "find build -type f -exec git update-index --no-assume-unchanged '{}' \\;",
+    "sass-build:lint": "stylelint source/style.scss",
+    "sass-build:compile": "node-sass --output-style=expanded -o build/assets source",
+    "sass-build:autoprefixer": "postcss -u autoprefixer -r build/assets/style.css",
+    "build:sass": "npm-run-all sass-build:*",
+    "watch:sass": "onchange 'source/style.scss' -- npm run build",
     "js-build:lint": "eslint source/script.js",
     "js-build:babel": "babel --presets babel-preset-env source -d build",
+    "js-build:css-to-js": "node scripts/css-to-js.js",
     "watch:js": "onchange 'source/script.js' -- npm run build",
     "build:js": "npm-run-all js-build:*",
     "build": "npm-run-all build:*; node scripts/text/build-complete.js",
     "watch": "node scripts/text/watching.js; npm-run-all -p watch:*",
-    "lint": "npm run js-build:lint",
-    "start": "node scripts/text/signature.js; npm run build; npm run watch"
+    "lint": "npm run sass-build:lint; npm run js-build:lint",
+    "start": "npm run ignorebuild && node scripts/text/signature.js; npm run build; npm run watch"
   },
   "devDependencies": {
+    "autoprefixer": "^8.0.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-preset-env": "^1.6.1",
@@ -35,8 +47,14 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
+    "genversion": "^2.0.1",
+    "js-beautify": "^1.7.5",
+    "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.2",
-    "onchange": "^3.3.0"
+    "onchange": "^3.3.0",
+    "postcss-cli": "^5.0.0",
+    "stylelint": "^9.1.3",
+    "stylelint-config-deloitte": "^1.0.1"
   },
   "dependencies": {}
 }
