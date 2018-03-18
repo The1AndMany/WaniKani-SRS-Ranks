@@ -49,8 +49,11 @@
 		// =====================================================
 		// =====================================================
 
-		CONST.SRS_RANKS.forEach(rank => {
+		CONST.SRS_RANKS.forEach((rank, idx) => {
 			CSS += [
+				`.srs .wk-srs-rank-${rank.toLowerCase()}::before {`,
+				`	content: '${idx}';`,
+				'}',
 				`.srs .wk-srs-rank-${rank.toLowerCase()}::after {`,
 				`	content: '${rank}';`,
 				'}',
