@@ -1,5 +1,9 @@
 # WaniKani SRS Ranks - Changelog
 
+## 1.1.1
+
+- SRS counter += 1 to offset array 0 index
+
 ## 1.1.0
 
 - Changed the SRS up/down arrow to be the SRS number
