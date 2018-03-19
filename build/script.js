@@ -2,7 +2,7 @@
 // @name            WaniKani SRS Ranks
 // @namespace 		wk-srs-ranks
 // @description     Adds 5 new ranks to WaniKani's SRS. Additionally, allows you to rename the SRS labels of the default system.
-// @version         1.1.0
+// @version         1.1.1
 
 // @author          Saxon Cameron, @saxoncameron
 // @website         http://www.saxoncameron.com/
@@ -55,7 +55,7 @@
         // =====================================================
 
         CONST.SRS_RANKS.forEach(function(rank, idx) {
-            CSS += ['.srs .wk-srs-rank-' + rank.toLowerCase() + '::before {', '\tcontent: \'' + idx + '\';', '}', '.srs .wk-srs-rank-' + rank.toLowerCase() + '::after {', '\tcontent: \'' + rank + '\';', '}'].join('');
+            CSS += ['.srs .wk-srs-rank-' + rank.toLowerCase() + '::before {', '\tcontent: \'' + (idx + 1) + '\';', '}', '.srs .wk-srs-rank-' + rank.toLowerCase() + '::after {', '\tcontent: \'' + rank + '\';', '}'].join('');
         });
 
         // Append CSS to the document
